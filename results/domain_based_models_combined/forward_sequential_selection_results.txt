@@ -1,0 +1,31 @@
+Neural Network Results
+======================
+
+Overall Accuracy: 0.5625
+
+
+Selected Features
+-----------------
+Max_EV
+EV_95_above_avg
+sweet_spot%
+
+
+Accuracy by Year
+----------------
+
+
+Champion Predictions
+--------------------
+2015: Actual = Frazier, Todd | Predicted = Fielder, Prince | Correct = False
+2016: Actual = Stanton, Giancarlo | Predicted = Stanton, Giancarlo | Correct = True
+2017: Actual = Judge, Aaron | Predicted = Judge, Aaron | Correct = True
+2018: Actual = Harper, Bryce | Predicted = Schwarber, Kyle | Correct = False
+2019: Actual = Alonso, Pete | Predicted = Alonso, Pete | Correct = True
+2021: Actual = Alonso, Pete | Predicted = Olson, Matt | Correct = False
+2022: Actual = Soto, Juan | Predicted = Soto, Juan | Correct = True
+2023: Actual = Guerrero Jr., Vladimir | Predicted = Guerrero Jr., Vladimir | Correct = True
+2024: Actual = Hernández, Teoscar | Predicted = Witt Jr., Bobby | Correct = False
+2025: Actual = Raleigh, Cal | Predicted = Cruz, Oneil | Correct = False
+
+Champion Accuracy: 0.5000

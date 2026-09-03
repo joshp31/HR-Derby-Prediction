@@ -1,0 +1,11 @@
+Year,Actual_Champion,Predicted_Champion,Correct
+2015,"Frazier, Todd","Fielder, Prince",False
+2016,"Stanton, Giancarlo","Stanton, Giancarlo",True
+2017,"Judge, Aaron","Judge, Aaron",True
+2018,"Harper, Bryce","Schwarber, Kyle",False
+2019,"Alonso, Pete","Alonso, Pete",True
+2021,"Alonso, Pete","Olson, Matt",False
+2022,"Soto, Juan","Soto, Juan",True
+2023,"Guerrero Jr., Vladimir","Guerrero Jr., Vladimir",True
+2024,"Hernández, Teoscar","Witt Jr., Bobby",False
+2025,"Raleigh, Cal","Cruz, Oneil",False

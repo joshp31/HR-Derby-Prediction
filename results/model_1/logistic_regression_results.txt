@@ -1,0 +1,34 @@
+Logistic Regression Results
+===========================
+
+Overall Accuracy: 0.3375
+
+
+Accuracy by Year
+----------------
+2015: 0.2500
+2016: 0.5000
+2017: 0.2500
+2018: 0.2500
+2019: 0.6250
+2021: 0.3750
+2022: 0.5000
+2023: 0.2500
+2024: 0.2500
+2025: 0.1250
+
+
+Champion Predictions
+--------------------
+2015: Actual = Frazier, Todd | Predicted = Donaldson, Josh | Correct = False
+2016: Actual = Stanton, Giancarlo | Predicted = Trumbo, Mark | Correct = False
+2017: Actual = Judge, Aaron | Predicted = Stanton, Giancarlo | Correct = False
+2018: Actual = Harper, Bryce | Predicted = Bregman, Alex | Correct = False
+2019: Actual = Alonso, Pete | Predicted = Alonso, Pete | Correct = True
+2021: Actual = Alonso, Pete | Predicted = Gallo, Joey | Correct = False
+2022: Actual = Soto, Juan | Predicted = Schwarber, Kyle | Correct = False
+2023: Actual = Guerrero Jr., Vladimir | Predicted = García, Adolis | Correct = False
+2024: Actual = Hernández, Teoscar | Predicted = Witt Jr., Bobby | Correct = False
+2025: Actual = Raleigh, Cal | Predicted = Wood, James | Correct = False
+
+Champion Accuracy: 0.1000

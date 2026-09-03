@@ -1,0 +1,48 @@
+model,accuracy,champion_accuracy
+Neural Network - Forward Sequential Selection,0.5625,0.5
+Logistic Regression - Model 1,0.3375,0.1
+Decision Tree - Model 1,0.325,0.0
+Random Forest - Model 1,0.375,0.2
+XGBoost - Model 1,0.3625,0.2
+Elastic Net - Model 1,0.3625,0.2
+K-Nearest Neighbors - Model 1,0.3625,0.1
+Ordinal Logistic Regression - Model 1,0.325,0.1
+SVM - Model 1,0.3375,0.2
+Neural Network - Model 1,0.4125,0.2
+Linear Discriminant Analysis - Model 1,0.25,0.0
+Logistic Regression - Model 2,0.35,0.2
+Decision Tree - Model 2,0.25,0.0
+Random Forest - Model 2,0.2875,0.1
+XGBoost - Model 2,0.3625,0.1
+Elastic Net - Model 2,0.35,0.2
+K-Nearest Neighbors - Model 2,0.4125,0.0
+Ordinal Logistic Regression - Model 2,0.275,0.1
+SVM - Model 2,0.325,0.3
+Neural Network - Model 2,0.3125,0.0
+Linear Discriminant Analysis - Model 2,0.3,0.2
+Neural Network - Batted Ball Direction,0.375,0.2
+Neural Network - Batted Ball Quality,0.3875,0.1
+Neural Network - Batted Ball Type,0.35,0.1
+Neural Network - Exit Velocity,0.45,0.4
+Neural Network - Launch Angle,0.3875,0.1
+Neural Network - Production Simple,0.4375,0.2
+Neural Network - Production,0.3375,0.1
+Neural Network - Relative Features,0.35,0.1
+Neural Network - All Predictors,0.3875,0.1
+Neural Network - Batted Ball Direction + Quality + Type,0.325,0.0
+Neural Network - Batted Ball Direction + Quality,0.4125,0.4
+Neural Network - Batted Ball Direction + Quality + Exit Velocity,0.325,0.1
+Neural Network - Batted Ball Direction + Exit Velocity,0.3125,0.2
+Neural Network - Batted Ball Quality + Type + Exit Velocity,0.425,0.2
+Neural Network - Batted Ball Quality + Exit Velocity,0.425,0.1
+Neural Network - Batted Ball Type + Exit Velocity,0.4375,0.1
+Neural Network - Exit Velocity + Launch Angle,0.375,0.1
+Neural Network - Forward Sequential Selection Result,0.5625,0.5
+Neural Network - Intuitive,0.3,0.2
+Neural Network - Optimal,0.475,0.3
+Neural Network - Production Simple + Batted Ball Direction,0.3,0.0
+Neural Network - Production Simple + Batted Ball Quality + Type,0.375,0.2
+Neural Network - Production Simple + Batted Ball Quality,0.375,0.2
+Neural Network - Production Simple + Batted Ball Type,0.4125,0.3
+Neural Network - Production Simple + Exit Velocity,0.3375,0.1
+Neural Network - Production Simple + Launch Angle,0.375,0.1

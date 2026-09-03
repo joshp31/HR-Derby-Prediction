@@ -1,0 +1,34 @@
+Ordinal Logistic Regression Results
+===================================
+
+Overall Accuracy: 0.3250
+
+
+Accuracy by Year
+----------------
+2015: 0.2500
+2016: 0.7500
+2017: 0.2500
+2018: 0.1250
+2019: 0.5000
+2021: 0.1250
+2022: 0.3750
+2023: 0.3750
+2024: 0.3750
+2025: 0.1250
+
+
+Champion Predictions
+--------------------
+2015: Actual = Frazier, Todd | Predicted = Pederson, Joc | Correct = False
+2016: Actual = Stanton, Giancarlo | Predicted = Stanton, Giancarlo | Correct = True
+2017: Actual = Judge, Aaron | Predicted = Stanton, Giancarlo | Correct = False
+2018: Actual = Harper, Bryce | Predicted = Báez, Javier | Correct = False
+2019: Actual = Alonso, Pete | Predicted = Chapman, Matt | Correct = False
+2021: Actual = Alonso, Pete | Predicted = Gallo, Joey | Correct = False
+2022: Actual = Soto, Juan | Predicted = Acuña Jr., Ronald | Correct = False
+2023: Actual = Guerrero Jr., Vladimir | Predicted = Alonso, Pete | Correct = False
+2024: Actual = Hernández, Teoscar | Predicted = Alonso, Pete | Correct = False
+2025: Actual = Raleigh, Cal | Predicted = Cruz, Oneil | Correct = False
+
+Champion Accuracy: 0.1000

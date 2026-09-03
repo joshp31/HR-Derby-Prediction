@@ -1,0 +1,34 @@
+Neural Network Results
+======================
+
+Overall Accuracy: 0.3000
+
+
+Accuracy by Year
+----------------
+2015: 0.3750
+2016: 0.2500
+2017: 0.5000
+2018: 0.2500
+2019: 0.2500
+2021: 0.1250
+2022: 0.3750
+2023: 0.1250
+2024: 0.2500
+2025: 0.5000
+
+
+Champion Predictions
+--------------------
+2015: Actual = Frazier, Todd | Predicted = Donaldson, Josh | Correct = False
+2016: Actual = Stanton, Giancarlo | Predicted = Frazier, Todd | Correct = False
+2017: Actual = Judge, Aaron | Predicted = Bour, Justin | Correct = False
+2018: Actual = Harper, Bryce | Predicted = Muncy, Max | Correct = False
+2019: Actual = Alonso, Pete | Predicted = Pederson, Joc | Correct = False
+2021: Actual = Alonso, Pete | Predicted = Ohtani, Shohei | Correct = False
+2022: Actual = Soto, Juan | Predicted = Schwarber, Kyle | Correct = False
+2023: Actual = Guerrero Jr., Vladimir | Predicted = Alonso, Pete | Correct = False
+2024: Actual = Hernández, Teoscar | Predicted = García, Adolis | Correct = False
+2025: Actual = Raleigh, Cal | Predicted = Wood, James | Correct = False
+
+Champion Accuracy: 0.0000
