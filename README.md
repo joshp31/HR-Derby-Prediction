@@ -7,7 +7,6 @@ Project Overview
 The goal of this project is to predict Home Run Derby outcomes using machine learning. Since the current Home Run Derby format was introduced in 2015, participants have competed through a bracket consisting of four possible outcomes: Round 1, Round 2, Round 3, or Champion.
 
 Rather than predicting a continuous statistic such as the number of home runs hit, this project treats the Derby as a four-class classification problem. Each participant is assigned a Round_Reached value from 1–4:
-
 Round	Outcome
 1	Eliminated in the first round
 2	Advances to the semifinals
@@ -23,23 +22,22 @@ This project addresses these challenges by combining historical baseball statist
 Objectives
 
 The primary objectives of this project were to:
-
-Engineer meaningful baseball and Statcast features for Home Run Derby prediction
-Compare multiple machine learning classification methods
-Evaluate models using cross-validation
-Identify the model with the strongest overall and champion prediction performance
-Determine which statistical characteristics provide useful predictive information
-Build a reproducible data engineering pipeline using a medallion architecture
-Generate a true out-of-sample prediction for the 2026 Home Run Derby
-Visualize model predictions, probabilities, and outcomes
+- Engineer meaningful baseball and Statcast features for Home Run Derby prediction
+- Compare multiple machine learning classification methods
+- Evaluate models using cross-validation
+- Identify the model with the strongest overall and champion prediction performance
+- Determine which statistical characteristics provide useful predictive information
+- Build a reproducible data engineering pipeline using a medallion architecture
+- Generate a true out-of-sample prediction for the 2026 Home Run Derby
+- Visualize model predictions, probabilities, and outcomes
 
 Data
 
 Data Sources
 
-Player statistics were obtained using the pybaseball Python library, which provides access to MLB and Baseball Reference data.
+Player statistics were obtained using [pybaseball](https://github.com/jldbc/pybaseball), which provides access to MLB and Baseball Reference data, including Statcast statistics.
 
-Historical Home Run Derby participants and results were compiled from publicly available sources, including Wikipedia's 2026 Major League Baseball Home Run Derby page.
+Historical Home Run Derby participants and results were compiled from publicly available sources, including the [2026 MLB Home Run Derby](https://en.wikipedia.org/wiki/2026_Major_League_Baseball_Home_Run_Derby) page.
 
 Time Period
 
@@ -50,11 +48,9 @@ Player statistics represent performance accumulated during the season through th
 Target Variable
 
 The target variable is:
-
-Round_Reached
+- Round_Reached
 
 with four possible outcomes:
-
 Value	Outcome
 1	Round 1
 2	Round 2
@@ -66,30 +62,29 @@ Features
 The dataset includes traditional batting statistics, Statcast metrics, batted-ball characteristics, and engineered relative statistics.
 
 Examples include:
-
-Plate appearances
-Home runs
-OPS
-ISO
-At-bats per home run
-Walk percentage
-Strikeout percentage
-Extra-base hit percentage
-Total bases per plate appearance
-Average exit velocity
-Maximum exit velocity
-95th-percentile exit velocity
-Average launch angle
-Median launch angle
-Launch-angle standard deviation
-Hard-hit percentage
-Barrel percentage
-Sweet-spot percentage
-Air-ball percentage
-Ground-ball percentage
-Popup percentage
-Pull percentage
-Center-field percentage
+- Plate appearances
+- Home runs
+- OPS
+- ISO
+- At-bats per home run
+- Walk percentage
+- Strikeout percentage
+- Extra-base hit percentage
+- Total bases per plate appearance
+- Average exit velocity
+- Maximum exit velocity
+- 95th-percentile exit velocity
+- Average launch angle
+- Median launch angle
+- Launch-angle standard deviation
+- Hard-hit percentage
+- Barrel percentage
+- Sweet-spot percentage
+- Air-ball percentage
+- Ground-ball percentage
+- Popup percentage
+- Pull percentage
+- Center-field percentage
 
 Relative features were also created to measure how a player's performance compared with the other players in the same Home Run Derby field.
 
@@ -108,24 +103,22 @@ Silver
 The Silver layer cleans and filters the raw data and narrows it to the players relevant to the Home Run Derby.
 
 This stage includes:
-
-Identifying Home Run Derby participants
-Matching players to MLB identifiers
-Filtering statistics to the appropriate season
-Restricting statistics to information available before the Derby
-Combining participant and statistical datasets
+- Identifying Home Run Derby participants
+- Matching players to MLB identifiers
+- Filtering statistics to the appropriate season
+- Restricting statistics to information available before the Derby
+- Combining participant and statistical datasets
 
 Gold
 
 The Gold layer contains the final datasets used for modeling.
 
 These datasets contain:
-
-Cleaned player statistics
-Engineered baseball metrics
-Player-relative features
-The target variable
-Model-ready observations
+- Cleaned player statistics
+- Engineered baseball metrics
+- Player-relative features
+- The target variable
+- Model-ready observations
 
 This architecture separates data ingestion, transformation, and modeling, making the project easier to reproduce and modify.
 
@@ -138,35 +131,32 @@ Rate and Percentage Features
 Several statistics were converted into rates or percentages to make player performance more comparable.
 
 Examples include:
-
-At-bats per home run
-Walk percentage
-Strikeout percentage
-Extra-base hit percentage
-Total bases per plate appearance
-Hard-hit percentage
-Barrel percentage
-Sweet-spot percentage
+- At-bats per home run
+- Walk percentage
+- Strikeout percentage
+- Extra-base hit percentage
+- Total bases per plate appearance
+- Hard-hit percentage
+- Barrel percentage
+- Sweet-spot percentage
 
 Statcast Features
 
 Statcast measurements were incorporated to capture the quality and characteristics of a player's contact.
 
 Examples include:
-
-Average exit velocity
-Maximum exit velocity
-95th-percentile exit velocity
-Average launch angle
-Median launch angle
-Launch-angle standard deviation
-Relative Features
+- Average exit velocity
+- Maximum exit velocity
+- 95th-percentile exit velocity
+- Average launch angle
+- Median launch angle
+- Launch-angle standard deviation
+- Relative Features
 
 A major component of the feature engineering process was creating features relative to the other participants in the same Derby.
 
 For example:
-
-EV_95_above_avg
+- EV_95_above_avg
 
 measures how far a player's 95th-percentile exit velocity is above the average of the relevant Home Run Derby field.
 
@@ -177,17 +167,16 @@ Modeling Methodology
 The problem was formulated as a four-class classification problem with Round_Reached as the target variable.
 
 Multiple machine learning methods were evaluated, including:
-
-Logistic Regression
-K-Nearest Neighbors
-Decision Tree
-Random Forest
-XGBoost
-Elastic Net
-Ordinal Logistic Regression
-Support Vector Machine
-Neural Network
-Linear Discriminant Analysis
+- Logistic Regression
+- K-Nearest Neighbors
+- Decision Tree
+- Random Forest
+- XGBoost
+- Elastic Net
+- Ordinal Logistic Regression
+- Support Vector Machine
+- Neural Network
+- Linear Discriminant Analysis
 
 Models were evaluated based on their ability to correctly predict the round reached by Home Run Derby participants.
 
@@ -210,12 +199,11 @@ Cross-validation was used during model evaluation and feature selection to estim
 Because multiple participants come from the same Derby field, observations from the same year are not completely independent. To account for this structure, the project used Leave-One-Group-Out (LOGO) cross-validation, with the Derby year serving as the grouping variable.
 
 For each validation iteration:
-
-All participants from one Derby year were held out as the validation set.
-The model was trained using participants from all other Derby years.
-Predictions were generated for the held-out Derby field.
-Accuracy was calculated from the held-out predictions.
-The process was repeated until every Derby year had served as the validation group.
+- All participants from one Derby year were held out as the validation set.
+- The model was trained using participants from all other Derby years.
+- Predictions were generated for the held-out Derby field.
+- Accuracy was calculated from the held-out predictions.
+- The process was repeated until every Derby year had served as the validation group.
 
 This approach tests whether a model can generalize from previous Derby fields to a completely unseen field rather than simply predicting additional players from years it has already seen.
 
@@ -230,21 +218,18 @@ After comparing the evaluated models and feature combinations, the final model s
 Final Features
 
 The final model used three features:
-
-Max_EV
-EV_95_above_avg
-sweet_spot%
+- Max_EV
+- EV_95_above_avg
+- sweet_spot%
 
 These features capture different aspects of a player's ability to generate high-quality contact:
-
-Max_EV: Maximum observed exit velocity
-EV_95_above_avg: 95th-percentile exit velocity relative to the average of the Derby field
-sweet_spot%: Percentage of batted balls within the optimal launch-angle range
+- Max_EV: Maximum observed exit velocity
+- EV_95_above_avg: 95th-percentile exit velocity relative to the average of the Derby field
+- sweet_spot%: Percentage of batted balls within the optimal launch-angle range
 
 Final Model
 
 The final neural network was implemented using MLPClassifier with the following configuration:
-
 Hidden Layers: (5, 5)
 Alpha: 0.1
 Maximum Iterations: 5000
@@ -255,7 +240,6 @@ The final pipeline also standardized the input features using StandardScaler.
 Model Performance
 
 The final Neural Network achieved:
-
 Metric	Performance
 Overall Accuracy	56.25%
 Champion Accuracy	50.00%
@@ -275,14 +259,12 @@ Bracket Assignment
 Because the Home Run Derby has a fixed bracket structure, predictions cannot be treated as completely independent classifications.
 
 The model first generates probabilities for each player across all four possible outcomes:
-
 Round 1
 Round 2
 Round 3
 Champion
 
 The resulting probabilities are then used to assign the eight participants to a valid Derby structure:
-
 4 players → Round 1
 2 players → Round 2
 1 player → Round 3
@@ -321,36 +303,35 @@ Rather than treating every prediction as equally certain, the model produces pro
 
 The final model was trained exclusively on information from before 2026 and was then evaluated against the actual 2026 Derby results. This provides a more realistic assessment of how the model performs on a future Derby field.
 
-Technologies Used
-Programming
-Python
-Data Engineering & Analysis
-Pandas
-NumPy
-PyBaseball
-Machine Learning
-Scikit-learn
-Statsmodels
-XGBoost
-Visualization
-Matplotlib
-Seaborn
-Development
-Git
-GitHub
-VS Code
+Technologies Used:
+- Programming
+- Python
+- Data Engineering & Analysis
+- Pandas
+- NumPy
+- PyBaseball
+- Machine Learning
+- Scikit-learn
+- Statsmodels
+- XGBoost
+- Visualization
+- Matplotlib
+- Seaborn
+- Development
+- Git
+- GitHub
+- VS Code
 
 Future Improvements
 
 Potential future improvements include:
-
-Explore environmental factors such as ballpark dimensions and weather
-Expand the historical dataset as additional Home Run Derby events occur
-Investigate additional ordinal classification techniques
-Explore more advanced neural network architectures
-Incorporate additional contextual information about each Derby field
-Incorporate additional Statcast and player-level features
-Explore additional methods for modeling the structure of the Home Run Derby bracket
+- Explore environmental factors such as ballpark dimensions and weather
+- Expand the historical dataset as additional Home Run Derby events occur
+- Investigate additional ordinal classification techniques
+- Explore more advanced neural network architectures
+- Incorporate additional contextual information about each Derby field
+- Incorporate additional Statcast and player-level features
+- Explore additional methods for modeling the structure of the Home Run Derby bracket
 
 Author
 
