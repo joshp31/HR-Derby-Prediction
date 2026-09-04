@@ -243,12 +243,12 @@ for i, row in df.iterrows():
 
     if correct:
 
-        badge_text = "✓  CORRECT"
+        badge_text = "CORRECT"
         badge_color = predicted_correct_color
 
     else:
 
-        badge_text = "✕  INCORRECT"
+        badge_text = "INCORRECT"
         badge_color = predicted_incorrect_color
 
 
